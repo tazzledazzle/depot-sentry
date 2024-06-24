@@ -1,5 +1,6 @@
 .venv/**/*
-
+backend/src/routes/
 **/*.pyc
-**/__pycache__/**
+
 **/*.egg-info/**
+How2dealWithpain
