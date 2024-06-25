@@ -40,3 +40,13 @@ export const getAllRepos = async (user) => {
     const response = await axios.get(`${API_BASE_URL}/vcs/repos`, { params: { user } });
     return response.data;
 };
+
+export const fetchRepos = async () => {
+    const response = await fetch('/api/repos');
+    return response.json();
+};
+
+export const fetchRepoDetails = async (repoId) => {
+    const response = await fetch(`/api/repos/${repoId}`);
+    return response.json();
+};
