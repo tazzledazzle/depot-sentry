@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 
+from src.utils.logger import logger
 from src.routes import notification_routes
 from src.routes import vcs_routes
 from src.routes import gitlab_routes
@@ -23,6 +24,8 @@ def create_app():
     app.register_blueprint(bitbucket_routes.bitbucket_bp, url_prefix='/bitbucket')
     app.register_blueprint(vcs_routes.vcs_bp, url_prefix='/vcs')
     app.register_blueprint(notification_routes.notification_bp, url_prefix='/notify')
+
+    logger.info('Starting flask app')
 
     return app
 
